@@ -3,14 +3,17 @@ import { useState } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [stepSize, setStepSize] = useState(1);
 
   const handleIncrement = () => {
-    setCount(count + 1);
+    setCount(count + stepSize);
   };
 
   const handleDecrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
+    if (count >= stepSize) {
+      setCount(count - stepSize);
+    } else {
+      setCount(0);
     }
   };
 
@@ -21,13 +24,30 @@ function App() {
   return (
     <div className="container">
       <h1 className="heading">Counter App</h1>
+
+      <div className="step-control">
+        <label htmlFor="stepSize">Step Size: </label>
+        <select
+          id="stepSize"
+          value={stepSize}
+          onChange={(e) => setStepSize(Number(e.target.value))}
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+
       <h2 className="counter">{count}</h2>
+
       <div className="button-group">
         <button onClick={handleIncrement}>Increment</button>
         <button onClick={handleDecrement} disabled={count === 0}>
           Decrement
         </button>
-        <button onClick={handleReset}>Reset</button> {/* New Button */}
+        <button onClick={handleReset}>Reset</button>
       </div>
     </div>
   );
