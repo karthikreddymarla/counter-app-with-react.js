@@ -1,8 +1,11 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react"; // Added useEffect
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(() => {
+    const savedCount = localStorage.getItem("counterValue");
+    return savedCount !== null ? Number(savedCount) : 0;
+  });
   const [stepSize, setStepSize] = useState(1);
 
   const handleIncrement = () => {
@@ -20,6 +23,10 @@ function App() {
   const handleReset = () => {
     setCount(0);
   };
+
+  useEffect(() => {
+    localStorage.setItem("counterValue", count);
+  }, [count]);
 
   return (
     <div className="container">
@@ -44,11 +51,9 @@ function App() {
 
       <div className="button-group">
         <button onClick={handleIncrement}>Increment</button>
-
         <button onClick={handleDecrement} disabled={count < stepSize}>
           Decrement
         </button>
-
         <button onClick={handleReset}>Reset</button>
       </div>
     </div>
