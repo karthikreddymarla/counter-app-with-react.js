@@ -4,10 +4,11 @@ A simple and interactive counter application built with React.js.
 Includes features like Step Size Control, Dark Mode, Reset Button, and more!
 
 ---
-
 ## 📸 Project Preview
 
-> Live Demo: [View Counter App](https://counter-app-with-react-js-karthikreddy.vercel.app/)
+![App Screenshot](./counter-app-preview.png)
+
+> Live Demo: [View Counter App](https://your-custom-url.vercel.app/)
 
 ---
 
