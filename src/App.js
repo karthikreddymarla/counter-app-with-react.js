@@ -1,5 +1,4 @@
-import "./App.css"; // Import your CSS
-
+import "./App.css";
 import { useState } from "react";
 
 function App() {
@@ -15,13 +14,20 @@ function App() {
     }
   };
 
+  const handleReset = () => {
+    setCount(0);
+  };
+
   return (
     <div className="container">
       <h1 className="heading">Counter App</h1>
       <h2 className="counter">{count}</h2>
       <div className="button-group">
         <button onClick={handleIncrement}>Increment</button>
-        <button onClick={handleDecrement}>Decrement</button>
+        <button onClick={handleDecrement} disabled={count === 0}>
+          Decrement
+        </button>
+        <button onClick={handleReset}>Reset</button> {/* New Button */}
       </div>
     </div>
   );
