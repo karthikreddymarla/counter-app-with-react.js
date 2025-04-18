@@ -4,6 +4,7 @@ A simple and interactive counter application built with React.js.
 Includes features like Step Size Control, Dark Mode, Reset Button, and more!
 
 ---
+
 ## 📸 Project Preview
 
 ![App Screenshot](./counter-app-preview.png)
@@ -48,3 +49,4 @@ git clone https://github.com/karthikreddymarla/counter-app-with-react.js.git
 cd counter-app
 npm install
 npm start
+```
