@@ -1,4 +1,5 @@
-import "./App.css";
+import "./App.css"; // Import your CSS
+
 import { useState } from "react";
 
 function App() {
@@ -15,11 +16,13 @@ function App() {
   };
 
   return (
-    <div className="App" style={{ textAlign: "center", marginTop: "100px" }}>
-      <h1>Counter App</h1>
-      <h2>{count}</h2>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Deccrement</button>
+    <div className="container">
+      <h1 className="heading">Counter App</h1>
+      <h2 className="counter">{count}</h2>
+      <div className="button-group">
+        <button onClick={handleIncrement}>Increment</button>
+        <button onClick={handleDecrement}>Decrement</button>
+      </div>
     </div>
   );
 }
