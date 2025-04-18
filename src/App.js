@@ -44,9 +44,11 @@ function App() {
 
       <div className="button-group">
         <button onClick={handleIncrement}>Increment</button>
-        <button onClick={handleDecrement} disabled={count === 0}>
+
+        <button onClick={handleDecrement} disabled={count < stepSize}>
           Decrement
         </button>
+
         <button onClick={handleReset}>Reset</button>
       </div>
     </div>
