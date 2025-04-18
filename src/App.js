@@ -7,6 +7,7 @@ function App() {
     return savedCount !== null ? Number(savedCount) : 0;
   });
   const [stepSize, setStepSize] = useState(1);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleIncrement = () => {
     setCount(count + stepSize);
@@ -29,7 +30,11 @@ function App() {
   }, [count]);
 
   return (
-    <div className="container">
+    <div className={`container ${isDarkMode ? "dark" : "light"}`}>
+      <button onClick={() => setIsDarkMode(!isDarkMode)}>
+        {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+      </button>
+
       <h1 className="heading">Counter App</h1>
 
       <div className="step-control">

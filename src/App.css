@@ -1,8 +1,13 @@
 /* src/App.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
 .container {
   text-align: center;
-  margin-top: 100px;
+  
   font-family: Arial, sans-serif;
 }
 
@@ -25,6 +30,8 @@
   gap: 20px;
 }
 
+
+
 button {
   background-color: #007BFF;
   color: white;
@@ -34,7 +41,9 @@ button {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin: 0; 
 }
+
 
 button:hover {
   background-color: #0056b3;
@@ -44,3 +53,24 @@ button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+/* Light Mode */
+.light {
+  background-color: white;
+  color: black;
+}
+
+/* Dark Mode */
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  min-height: 100vh;
+  padding: 20px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+
